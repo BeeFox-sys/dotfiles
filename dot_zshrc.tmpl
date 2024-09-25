@@ -34,6 +34,6 @@ if [[ $- == *i* ]]; then
    echo -e "$(<~/splash.ascii)\e[0m"
    {{- end -}}
    {{ if .zshrc.printDatetime }}
-   echo "\033[94m$(date)\033[0m"
+   echo "\033[94m$(date +"%a %d %b %Y %R:%S %Z")\033[0m"
    {{- end }}
 fi
