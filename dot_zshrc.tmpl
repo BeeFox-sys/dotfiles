@@ -17,8 +17,8 @@ setopt APPEND_HISTORY
 
 {{ if .zshrc.zoxide -}}
 eval "$(zoxide init --cmd cd zsh)"
-{{- end -}}
-export PATH="$PATH:/opt/nvim-linux64/bin:$HOME/.local/bin:$HOME/bin:$HOME/bin"
+{{ end -}}
+export PATH="$PATH:/opt/nvim-linux64/bin:$HOME/.local/bin:$HOME/./bin"
 
 alias xit="exit"
 alias exi="exit"
@@ -30,7 +30,7 @@ export EDITOR="nvim"
 
 # Print Welcome Art
 if [[ $- == *i* ]]; then
-   {{ if .zshrc.printSplash }}
+   {{ if .zshrc.printSplash -}}
    echo -e "$(<~/splash.ascii)\e[0m"
    {{- end -}}
    {{ if .zshrc.printDatetime }}
