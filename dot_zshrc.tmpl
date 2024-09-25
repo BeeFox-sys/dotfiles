@@ -30,10 +30,10 @@ export EDITOR="nvim"
 
 # Print Welcome Art
 if [[ $- == *i* ]]; then
-   {{ if .zshrc.printSplash -}}
+   {{ if .zshrc.printSplash }}
    echo -e "$(<~/splash.ascii)\e[0m"
    {{- end -}}
-   {{ if .zshrc.printDatetime -}}
+   {{ if .zshrc.printDatetime }}
    echo "\033[94m$(date)\033[0m"
    {{- end }}
 fi
