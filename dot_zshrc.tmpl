@@ -10,7 +10,7 @@ zstyle ':omz:update' mode reminder
 bindkey '^[[1;3C' autosuggest-accept
 bindkey '^[' kill-whole-line
 source $ZSH/oh-my-zsh.sh
-HOSTCOLOUR={{ .zshrc.hostColour }}
+HOSTCOLOUR={{ printf "%03d" .zshrc.hostColour }}
 
 HISTCONTROL=ignoreboth
 setopt APPEND_HISTORY
