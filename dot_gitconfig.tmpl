@@ -1,0 +1,28 @@
+[user]
+	name = {{ .profile.name }}
+	email = {{ .profile.email }}
+[credential]
+	helper = store
+[init]
+	defaultBranch = main
+[url "https://github.com/"]
+	insteadOf = git://github.com/
+
+[alias]
+	#short command = long command
+	uncommit = reset --soft HEAD^
+	unstage = reset
+	fucked = reset --keep HEAD@{1}
+
+[color]
+	ui = true
+[core]
+	autocrlf = input #set this to "input" on Mac/Linux and "true" on Windows
+	#editor = ?
+[diff]
+	mnemonicprefix = true
+	rename = copy
+[grep]
+	lineNumber = true
+[interactive]
+	singlekey = true

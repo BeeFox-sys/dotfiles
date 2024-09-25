@@ -1,0 +1,24 @@
+# -*-mode:conf-toml-*- vim:ft=toml
+
+# ~/.local/share/chezmoi/.chezmoi.toml.tmpl
+# =============================================================================
+# Used to customize configuration when doing a `chezmoi init`.
+#
+# This template file will trigger prompts to fill-in machine-specific
+# templateable values. The resulting file is then created at
+# `~/.config/chezmoi/chezmoi.toml`
+# See https://www.chezmoi.io/docs/how-to/
+
+
+data: 
+
+    profile: 
+        name: {{ promptStringOnce (index . "profile") "name" "Name:" "Bee"}}
+        email: {{ promptStringOnce (index . "profile") "email" "Email:" "bee@beefox.xyz"}}
+
+    zshrc: 
+        tmux: {{ promptBoolOnce (index . "zshrc") "tmux" "Enable Tmux? y/N" false }}
+        hostColour: {{ max 0 (min 255 (promptIntOnce (index . "zshrc") "hostColour" "Host Colour? (xTerm Colour 0-255)" 250)) }}
+        printSplash: {{ promptBool "Print Splash? [y/N]" false }}
+        printDatetime: {{ promptBool "Print DateTime? [Y/n]" true }}
+        zoxide: {{ promptBool "Use Zoxide? [Y/n]" true}}
