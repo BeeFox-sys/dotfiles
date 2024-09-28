@@ -15,10 +15,11 @@ HOSTCOLOUR={{ printf "%03d" .zshrc.hostColour }}
 HISTCONTROL=ignoreboth
 setopt APPEND_HISTORY
 
+export PATH="$PATH:/opt/nvim-linux64/bin:$HOME/.local/bin:$HOME/./bin"
+
 {{ if .zshrc.zoxide -}}
 eval "$(zoxide init --cmd cd zsh)"
 {{ end -}}
-export PATH="$PATH:/opt/nvim-linux64/bin:$HOME/.local/bin:$HOME/./bin"
 
 alias xit="exit"
 alias exi="exit"
