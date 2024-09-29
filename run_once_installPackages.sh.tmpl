@@ -1,6 +1,8 @@
 #!/bin/sh
-
-{{- if (index . "installed") }}
+if [ -f ~/.zshrc_local ]; then
+    echo "Already Initalized, Skipping install scripts"
+    exit
+fi
 
 # Packages
 sudo apt install -y zsh nodejs curl fzf git aptitude 
@@ -22,8 +24,3 @@ sudo rm -rf /opt/nvim
 sudo tar -C /opt -xzf nvim-linux64.tar.gz
 rm nvim-linux64.tar.gz
 sudo update-alternatives --install /usr/bin/editor editor /opt/nvim-linux64/bin/nvim 5
-
-{{ $installed := true}}
-{{- else -}}
-echo "Chezmoi already initalized, skipping install script"
-{{- end -}}
