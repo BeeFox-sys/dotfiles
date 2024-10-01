@@ -3,9 +3,9 @@
 local default_plugins = {
 
   "nvim-lua/plenary.nvim",
-  -- {
-  -- "HE7086/sudoedit.nvim" 
-  -- },
+  {
+   "HE7086/sudoedit.nvim"
+  },
   {
     "NvChad/base46",
     branch = "v2.0",
